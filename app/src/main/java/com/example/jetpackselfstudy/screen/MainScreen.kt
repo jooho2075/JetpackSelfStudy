@@ -100,7 +100,7 @@ fun ArtistCardArrangement(artist: Artist) {
 }*/
 
 // SearchResult
-@Composable
+/*@Composable
 fun SearchResult() {
     Row {
         Image(
@@ -119,6 +119,31 @@ fun SearchResult() {
                 text = "World!!"
             )
         }
+    }
+}*/
+
+// ArtistCardModifiers
+@Composable
+fun ArtistCardModifiers(
+    artist: Artist,
+    onClick: () -> Unit
+) {
+    val padding = 16.dp
+    Column(
+        modifier = Modifier
+            .clickable(onClick = onClick)
+            .padding(padding)
+            .fillMaxWidth()
+    ) {
+        Row(
+            verticalAlignment = Alignment.CenterVertically
+        ) {/*...*/}
+        Spacer(
+            Modifier.size(padding)
+        )
+        Card(
+            elevation = CardDefaults.cardElevation(defaultElevation = 4.dp),
+        ) {/*...*/}
     }
 }
 
@@ -150,8 +175,8 @@ fun MainScreenPreview() {
     ArtistCardRow(artist = Artist())
     ArtistAvatar(artist = Artist())
     ArtistCardArrangement(artist = Artist())
-    */
     SearchResult()
+    */
 
     //수정자
     /*Greeting(name = "ParkJooHo")*/
