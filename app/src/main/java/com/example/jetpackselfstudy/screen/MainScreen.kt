@@ -1,11 +1,17 @@
 package com.example.jetpackselfstudy.screen
 
+import android.graphics.drawable.Icon
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.ui.graphics.ImageBitmap
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.padding
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Check
+import androidx.compose.material3.Icon
 import androidx.compose.runtime.Composable
 import androidx.compose.material3.Text
 import androidx.compose.ui.Alignment
@@ -39,7 +45,9 @@ fun ArtistCard() {
 
 //ArtistCardRow 이미지가 보이지 않는 이유?
 /*@Composable
-fun ArtistCardRow() {
+fun ArtistCardRow(
+    artist: Artist
+) {
     Row(
         verticalAlignment = Alignment.CenterVertically
     ) {
@@ -49,13 +57,41 @@ fun ArtistCardRow() {
             Text(artist.lastSeenOnline)
         }
     }
+}*/
+
+// ArtistAvatar
+/*@Composable
+fun ArtistAvatar(artist: Artist) {
+    Box {
+        Image(
+            bitmap = artist.image,
+            contentDescription = null
+        )
+        Icon(
+            Icons.Filled.Check,
+            contentDescription = "Check mark"
+        )
+    }
+}*/
+
+@Composable
+fun ArtistCardArrangement(artist: Artist) {
+    Row(
+        verticalAlignment = Alignment.CenterVertically,
+        horizontalArrangement = Arrangement.End
+    ) {
+        Image(bitmap = artist.image, contentDescription = "Artist image")
+        Column {
+            
+        }
+    }
 }
 
 class Artist {
-    val image: ImageBitmap = ImageBitmap(0, 0)
+    val image: ImageBitmap = ImageBitmap(100, 100)
     val name = ""
     val lastSeenOnline = ""
-}*/
+}
 
 /*@Composable
 fun Greeting(name: String) {
@@ -72,12 +108,16 @@ fun Greeting(name: String) {
 @Preview(showBackground = true)
 @Composable
 fun MainScreenPreview() {
-    // 레이아웃 기본사항
-    /*HelloWorld("ParkJooHo")
+    /* 레이아웃 기본사항
+    HelloWorld("ParkJooHo")
     MyComposable()
     ArtistCard()
-    ArtistCardRow()*/
-
+    ArtistCardRow(artist = Artist())
+    ArtistAvatar(artist = Artist())
+    */
+    ArtistCardArrangement(artist = Artist())
     //수정자
     /*Greeting(name = "ParkJooHo")*/
+
+
 }
