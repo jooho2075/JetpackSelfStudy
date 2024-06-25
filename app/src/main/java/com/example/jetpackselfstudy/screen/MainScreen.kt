@@ -1,24 +1,35 @@
 package com.example.jetpackselfstudy.screen
 
-import android.graphics.drawable.Icon
 import androidx.compose.foundation.Image
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
-import androidx.compose.ui.graphics.ImageBitmap
+import androidx.compose.foundation.layout.BoxWithConstraints
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Check
+import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Icon
-import androidx.compose.runtime.Composable
+import androidx.compose.material3.ModalNavigationDrawer
+import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
+import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.semantics.Role.Companion.Image
+import androidx.compose.ui.graphics.ImageBitmap
+import androidx.compose.ui.layout.ContentScale
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import coil.compose.rememberImagePainter
+import com.example.jetpackselfstudy.R
 
 //HelloWorld
 /*@Composable
@@ -74,7 +85,8 @@ fun ArtistAvatar(artist: Artist) {
     }
 }*/
 
-@Composable
+//ArtistCardArrangement
+/*@Composable
 fun ArtistCardArrangement(artist: Artist) {
     Row(
         verticalAlignment = Alignment.CenterVertically,
@@ -83,6 +95,29 @@ fun ArtistCardArrangement(artist: Artist) {
         Image(bitmap = artist.image, contentDescription = "Artist image")
         Column {
             
+        }
+    }
+}*/
+
+// SearchResult
+@Composable
+fun SearchResult() {
+    Row {
+        Image(
+            painter = rememberImagePainter("https://search.pstatic.net/sunny/?src=https%3A%2F%2Fi.pinimg.com%2F736x%2F1d%2F0f%2F4a%2F1d0f4a8bea85da5580ce4adbd7941c78.jpg&type=a340"),
+            contentDescription = "Online Dog Image",
+            modifier = Modifier
+                .fillMaxWidth()
+                .height(200.dp),
+            contentScale = ContentScale.Crop
+        )
+        Column {
+            Text(
+                text = "Hello"
+            )
+            Text(
+                text = "World!!"
+            )
         }
     }
 }
@@ -114,8 +149,10 @@ fun MainScreenPreview() {
     ArtistCard()
     ArtistCardRow(artist = Artist())
     ArtistAvatar(artist = Artist())
-    */
     ArtistCardArrangement(artist = Artist())
+    */
+    SearchResult()
+
     //수정자
     /*Greeting(name = "ParkJooHo")*/
 
